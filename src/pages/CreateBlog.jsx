@@ -1,5 +1,6 @@
 import { useState } from 'react';
-
+import axios from 'axios';
+import toast from 'react-hot-toast';
 const CreateBlog = () => {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
@@ -14,18 +15,50 @@ const CreateBlog = () => {
         }
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(title);
-        console.log(content);
-        console.log(image);
+    const handleSubmit = async (e) => {
+  e.preventDefault();
 
-        // reset
-        setTitle("");
-        setContent("");
-        setImage(null);
-        setImagePreview(null);
-    };
+  if (!image) {
+    alert("Please select an image");
+    return;
+  }
+
+  const formData = new FormData();
+  formData.append("title", title);
+  formData.append("content", content);
+  formData.append("image", image);
+
+  try {
+    const token = localStorage.getItem("token");
+    if(!token){
+        alert("You must be logged in to create a blog");
+    }
+    console.log("TOKEN FROM LS:", token);
+
+    const res = await axios.post(
+      "http://localhost:5000/api/blogs/create-blog",
+      formData,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    console.log("Blog created:", res.data);
+    toast.success("Blog created successfully!");
+
+    // reset after success
+    setTitle("");
+    setContent("");
+    setImage(null);
+    setImagePreview(null);
+  } catch (error) {
+    console.error("Error creating blog:", error);
+  }
+};
+
 
     return (
         <>
