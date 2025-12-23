@@ -18,7 +18,7 @@ const Dashboard = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/blogs/blogs/user",
+        "https://blog-backend-topaz-seven.vercel.app/api/blogs/blogs/user",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -42,7 +42,7 @@ const Dashboard = () => {
     try {
       const token = localStorage.getItem("token");
       await axios.delete(
-        `http://localhost:5000/api/blogs/delete-blog/${blogId}`,
+        `https://blog-backend-topaz-seven.vercel.app/api/blogs/delete-blog/${blogId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,

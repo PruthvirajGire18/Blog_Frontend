@@ -31,7 +31,7 @@ const EditBlog = () => {
         formData.append("title",title);
         formData.append("content",content);
         formData.append("image",image);
-        const res=await axios.put(`http://localhost:5000/api/blogs/edit-blog/${id}`,formData,{
+        const res=await axios.put(`https://blog-backend-topaz-seven.vercel.app/api/blogs/edit-blog/${id}`,formData,{
             headers:{
                 "Content-Type":"multipart/form-data",
                 Authorization:`Bearer ${token}`

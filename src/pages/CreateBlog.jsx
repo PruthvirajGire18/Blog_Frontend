@@ -36,7 +36,7 @@ const CreateBlog = () => {
     console.log("TOKEN FROM LS:", token);
 
     const res = await axios.post(
-      "http://localhost:5000/api/blogs/create-blog",
+      "https://blog-backend-topaz-seven.vercel.app/api/blogs/create-blog",
       formData,
       {
         headers: {

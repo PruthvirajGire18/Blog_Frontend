@@ -19,7 +19,7 @@ const Blogs = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/blogs/blogs/all-users",
+        "https://blog-backend-topaz-seven.vercel.app/api/blogs/blogs/all-users",
         {
           headers: {
             Authorization: `Bearer ${token}`,

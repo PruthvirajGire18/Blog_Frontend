@@ -17,7 +17,7 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        "http://localhost:5000/api/admin/admin/blogs",
+        "https://blog-backend-topaz-seven.vercel.app/api/admin/admin/blogs",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
     try {
       setLoading(true);
       const res = await axios.get(
-        "http://localhost:5000/api/admin/admin/blogs/pending",
+        "https://blog-backend-topaz-seven.vercel.app/api/admin/admin/blogs/pending",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -56,7 +56,7 @@ const AdminDashboard = () => {
   const updateBlogStatus = async (blogId, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/admin/admin/blog/${blogId}/status`,
+        `https://blog-backend-topaz-seven.vercel.app/api/admin/admin/blog/${blogId}/status`,
         { status },
         {
           headers: {

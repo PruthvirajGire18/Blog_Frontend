@@ -8,7 +8,7 @@ const SingleBlog = () => {
     const fetchSingleBlog=async()=>{
         try {
             const token=localStorage.getItem("token");
-            const res=await axios.get(`http://localhost:5000/api/blogs/${id}`,{
+            const res=await axios.get(`https://blog-backend-topaz-seven.vercel.app/api/blogs/${id}`,{
                 headers:{
                     Authorization:`Bearer ${token}`
                 }
