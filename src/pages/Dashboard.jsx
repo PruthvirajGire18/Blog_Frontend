@@ -18,7 +18,7 @@ const Dashboard = () => {
       const token = localStorage.getItem("token");
 
       const res = await axios.get(
-        "http://localhost:5000/api/blogs/all-blogs",
+        "http://localhost:5000/api/blogs/blogs/user",
         {
           headers: {
             Authorization: `Bearer ${token}`,

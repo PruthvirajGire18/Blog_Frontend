@@ -9,6 +9,7 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import CreateBlog from "./pages/CreateBlog";
 import SingleBlog from "./pages/SingleBlog";
 import EditBlog from "./pages/EditBlog";
+import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
         <Route path="/create-blog" element={<ProtectedRoute><CreateBlog /></ProtectedRoute>} />
         <Route path="/blogs/:id" element={<ProtectedRoute><SingleBlog /></ProtectedRoute>} />
         <Route path="/blogs/edit-blog/:id" element={<ProtectedRoute><EditBlog /></ProtectedRoute>} />
-
+        <Route path="/admin/dashboard" element={<ProtectedRoute><AdminDashboard/></ProtectedRoute>}/>
       </Routes>
     </>
 
