@@ -26,7 +26,7 @@ const Login = () => {
 
     } catch (error) {
         console.log(error);
-        alert(error.response.data.message);
+      alert(error.response?.data?.message || "Unable to connect to the server. Please try again.");
     }
   };
 

@@ -117,7 +117,7 @@ const AdminDashboard = () => {
       <div className="max-w-7xl mx-auto mb-12 text-center">
         <h1 className="text-4xl font-extrabold">Admin Dashboard</h1>
         <p className="text-gray-400 mt-2">
-          Manage blog approvals
+          Manage blog 
         </p>
         <p className="text-sm text-gray-500 mt-1">
           Logged in as{" "}
